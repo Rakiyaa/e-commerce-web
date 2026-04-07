@@ -3,7 +3,9 @@ import { ProductType } from "./types"
 
 const ProductCard = ({product}:{product:ProductType}) => {
   return (
-    <div className="">ProductCard</div>
+    <div className="shadow-lg rounded-lg overflow-hidden">
+        
+    </div>
   )
 }
 
