@@ -30,7 +30,7 @@ const ProductCard = ({product}:{product:ProductType}) => {
         <Link href={`/product/${product.id}`}>
             <div className="relative aspect-[2/3]">
                 <Image 
-                   src={product.images[product.colors[0]]} 
+                   src={product.images[productTypes.color]} 
                    alt={product.name} 
                    fill 
                    className="object-cover hover:scale-105 transition-all duration-300"
@@ -64,7 +64,11 @@ const ProductCard = ({product}:{product:ProductType}) => {
                  <span className="text-gray-500">Color</span>
                  <div className="flex items-center gap-2">
                     {product.colors.map(color=>(
-                        <div className="" key={color} onClick={()=>handleProductType({type:"color",value:color})}>
+                        <div 
+                        className={`cursor-pointer border-2 flex items-center justify-center ${productTypes.color === color ? "border-gray-400" : "border-transparent"} rounded-full p-[2px]`} 
+                        key={color} 
+                        onClick={()=>
+                          handleProductType({type:"color",value:color})}>
                             <div className="w-[14px] h-[14px] rounded-full" 
                             style={{backgroundColor:color}}
                             />
