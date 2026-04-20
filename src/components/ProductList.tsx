@@ -125,9 +125,13 @@ const ProductList = ({category}: {category:string}) => {
               <ProductCard key={product.id} product={product}/>
             ))} 
         </div>
-        <Link href="View all products"></Link>
+        <Link href={category ? `/products/?category${category}` : "/products"} 
+        className=""
+        >
+          View all products
+          </Link>
     </div>
-  )
+  ) 
 } 
 
-export default ProductList
+export default ProductList 
