@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+// @ts-expect-error Next.js supports side-effect CSS imports for app layouts.
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -29,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="mx-auto p-4 sm:max-w-xl md:max-w-2xl lg:max-2-3xl xl:max-w-6xl">
+        <div className="mx-auto p-4 sm:px-0 sm:max-w-xl md:max-w-2xl lg:max-2-3xl xl:max-w-6xl">
           <Navbar />
           {children}
           <Footer />
